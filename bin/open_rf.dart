@@ -1,5 +1,18 @@
-import 'package:open_rf/open_rf.dart' as open_rf;
+import 'package:raylib/raylib.dart';
+import 'dart:io';
 
-void main(List<String> arguments) {
-  print('Hello world: ${open_rf.calculate()}!');
+void main() {
+
+  // Get the current running directory of the game.
+  final String currentPath = Directory.current.path;
+
+  
+  // Initialize the library with enums.
+  initLibrary(
+    linux: "$currentPath/libraylib.so",
+    // Windows is on the todo list
+    // windows: '../somewhere/else',
+  );
+
+  
 }
