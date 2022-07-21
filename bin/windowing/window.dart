@@ -4,8 +4,9 @@ class Window {
   int sizeX = 0;
   int sizeY = 0;
   double aspect = 0;
+  String title = "";
 
-  Window (this.sizeX, this.sizeY){
+  Window (this.sizeX, this.sizeY, this.title){
     aspect = sizeX.toDouble() / sizeY.toDouble();
   }
 
@@ -29,6 +30,10 @@ class Window {
 
   double getAspect() {
     return aspect;
+  }
+
+  String getTitle(){
+    return title;
   }
 
   void debug() {
