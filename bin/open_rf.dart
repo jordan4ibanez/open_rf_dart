@@ -35,12 +35,41 @@ void main() {
 
   initWindow(window.getSizeX(), window.getSizeY(), window.getTitle());
 
+  setWindowState(ConfigFlags.windowResizable);
+
+  var test = ConfigFlags.windowResizable;
+
+  print(test);
+
   setTargetFPS(60);
+
+  int counter = 0;
 
   while(!windowShouldClose()) {
 
     // Event/engine calls
-    window.debug();
+    // window.debug();
+
+
+    counter += 1;
+
+    // print(counter);
+
+    if (counter >= 60) {
+      if (isWindowState(ConfigFlags.windowResizable)) {
+        clearWindowState(ConfigFlags.windowResizable);
+      } else {
+        setWindowState(ConfigFlags.windowResizable);
+      }
+
+      counter = 0;
+    }
+
+
+    bool test = isWindowResized();
+    if (test) {
+      print(test);
+    }
 
 
     // Render calls
