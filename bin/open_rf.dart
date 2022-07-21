@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:raylib/raylib.dart';
 
 import 'dart:io';
@@ -28,16 +30,23 @@ void main() {
   // Render object
   Render render = Render();
 
+  // Random object
+  Random random = Random(DateTime.now().millisecondsSinceEpoch);
+
   initWindow(window.getSizeX(), window.getSizeY(), window.getTitle());
 
   setTargetFPS(60);
 
   while(!windowShouldClose()) {
+
+    // Event/engine calls
     window.debug();
 
 
-    render.draw();
+    // Render calls
+    render.draw(random);
     
+    // --- Repeat ----->
   }
 
 }
