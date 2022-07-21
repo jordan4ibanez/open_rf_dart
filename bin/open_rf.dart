@@ -2,6 +2,7 @@ import 'package:raylib/raylib.dart';
 
 import 'dart:io';
 
+import 'rendering/render.dart';
 import 'windowing/window.dart';
 
 void main() {
@@ -24,6 +25,9 @@ void main() {
   // Window object
   Window window = Window(800, 400, "Open RF $versionNumber");
 
+  // Render object
+  Render render = Render();
+
   initWindow(window.getSizeX(), window.getSizeY(), window.getTitle());
 
   setTargetFPS(60);
@@ -32,11 +36,8 @@ void main() {
     window.debug();
 
 
-    beginDrawing();
-
-    clearBackground(Color(255, 0, 0, 255));
-
-    endDrawing();
+    render.draw();
+    
   }
 
 }
