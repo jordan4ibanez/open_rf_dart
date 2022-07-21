@@ -8,7 +8,7 @@ class Render {
 
     beginDrawing();
 
-    clearBackground(Color(random.nextInt(256), random.nextInt(256), random.nextInt(256), 255));
+    clearBackground(Color(255, 255, 255, 255));
 
     endDrawing();
     
