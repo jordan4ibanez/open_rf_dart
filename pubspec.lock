@@ -191,7 +191,7 @@ packages:
     source: hosted
     version: "2.1.1"
   raylib:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: raylib
       url: "https://pub.dartlang.org"
