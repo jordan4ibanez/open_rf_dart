@@ -1,12 +1,14 @@
+import 'dart:math';
+
 import 'package:raylib/raylib.dart';
 
 class Render {
 
-  void draw() {
+  void draw(Random random) {
 
     beginDrawing();
 
-    clearBackground(Color(255, 0, 0, 255));
+    clearBackground(Color(random.nextInt(256), random.nextInt(256), random.nextInt(256), 255));
 
     endDrawing();
     
