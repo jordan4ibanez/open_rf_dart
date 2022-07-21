@@ -37,10 +37,6 @@ void main() {
 
   setWindowState(ConfigFlags.windowResizable);
 
-  var test = ConfigFlags.windowResizable;
-
-  print(test);
-
   setTargetFPS(60);
 
   int counter = 0;
@@ -48,28 +44,17 @@ void main() {
   while(!windowShouldClose()) {
 
     // Event/engine calls
-    // window.debug();
+    window.update();
 
 
     counter += 1;
 
-    // print(counter);
-
-    if (counter >= 60) {
-      if (isWindowState(ConfigFlags.windowResizable)) {
-        clearWindowState(ConfigFlags.windowResizable);
-      } else {
-        setWindowState(ConfigFlags.windowResizable);
-      }
+    if (counter >= 180) {
+      toggleFullscreen();
 
       counter = 0;
     }
 
-
-    bool test = isWindowResized();
-    if (test) {
-      print(test);
-    }
 
 
     // Render calls
