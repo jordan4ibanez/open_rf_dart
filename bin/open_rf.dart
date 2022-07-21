@@ -57,6 +57,8 @@ void main() {
     fovy: 45
   );
 
+  setCameraMode(camera, CameraMode.orbital);
+
   while(!windowShouldClose()) {
 
     double delta = getFrameTime();
@@ -67,9 +69,12 @@ void main() {
 
     counter += 1;
 
+    camera.fovy -= delta;
+
     if (counter >= 180) {
       toggleFullscreen();
 
+      /*
       if (isWindowState(ConfigFlags.fullscreenMode)) {
         setCameraMode(camera, CameraMode.orbital);
         camera.target.x = 0;
@@ -78,6 +83,7 @@ void main() {
       } else {
         setCameraMode(camera, CameraMode.firstPerson);
       }
+      */
 
       counter = 0;
     }
